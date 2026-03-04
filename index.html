@@ -4,54 +4,121 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>puuoo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             background: #000;
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
+            font-family: 'Gaegu', cursive;
+            padding: 20px;
         }
         .logo {
             display: flex;
             flex-direction: column;
             align-items: center;
             user-select: none;
+            position: relative;
+        }
+        .wordmark-row {
+            display: flex;
+            align-items: baseline;
+            position: relative;
+        }
+        .puu {
+            font-size: 80px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 4px;
+            line-height: 1;
+        }
+        .eyes-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .arch {
-            margin-bottom: -6px;
+            margin-bottom: -10px;
         }
-        .wordmark {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            font-size: 72px;
-            font-weight: 300;
-            letter-spacing: 6px;
+        .oo {
+            font-size: 80px;
+            font-weight: 700;
             color: #fff;
+            letter-spacing: 4px;
+            line-height: 1;
         }
         .smile {
-            margin-top: -4px;
+            margin-top: -8px;
+        }
+        .links {
+            margin-top: 48px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        .links a {
+            color: #666;
+            font-size: 18px;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .links a:hover {
+            color: #fff;
+        }
+        .email {
+            margin-top: 32px;
+            color: #444;
+            font-size: 16px;
+        }
+        .email a {
+            color: #444;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .email a:hover {
+            color: #fff;
         }
         @media (max-width: 480px) {
-            .wordmark { font-size: 48px; letter-spacing: 4px; }
-            .arch svg { width: 52px; height: 16px; }
-            .smile svg { width: 36px; height: 14px; }
+            .puu, .oo { font-size: 56px; letter-spacing: 3px; }
+            .arch svg { width: 48px; height: 16px; }
+            .smile svg { width: 32px; height: 12px; }
+            .arch { margin-bottom: -8px; }
+            .smile { margin-top: -6px; }
+            .links a { font-size: 16px; }
         }
     </style>
 </head>
 <body>
     <div class="logo">
-        <div class="arch">
-            <svg width="72" height="22" viewBox="0 0 72 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8 20 C8 8, 64 8, 64 20" stroke="#fff" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-            </svg>
+        <div class="wordmark-row">
+            <span class="puu">puu</span>
+            <div class="eyes-block">
+                <div class="arch">
+                    <svg width="62" height="18" viewBox="0 0 62 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 16 C6 4, 56 4, 56 16" stroke="#fff" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                    </svg>
+                </div>
+                <span class="oo">oo</span>
+                <div class="smile">
+                    <svg width="40" height="16" viewBox="0 0 40 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 3 C10 14, 30 14, 34 3" stroke="#fff" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                    </svg>
+                </div>
+            </div>
         </div>
-        <div class="wordmark">puuoo</div>
-        <div class="smile">
-            <svg width="48" height="18" viewBox="0 0 48 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8 4 C12 16, 36 16, 40 4" stroke="#fff" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-            </svg>
-        </div>
+    </div>
+    <div class="links">
+        <a href="loverscratch/">Privacy Policy</a>
+    </div>
+    <div class="email">
+        <a href="mailto:puuooapps@gmail.com">puuooapps@gmail.com</a>
     </div>
 </body>
 </html>
