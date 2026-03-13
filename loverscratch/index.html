@@ -104,7 +104,7 @@
         <div class="header">
             <h1>Privacy Policy</h1>
             <div class="app-name">Lover's Scratch: Couple Game</div>
-            <div class="date">Effective Date: March 5, 2026</div>
+            <div class="date">Effective Date: March 13, 2026</div>
             <div class="links"><a href="terms.html">View Terms of Service &rarr;</a></div>
         </div>
 
@@ -135,10 +135,11 @@
             <li>Partnership data: invite codes, partner connections, streak counts, and scratch availability timestamps</li>
             <li>Board game progress (positions, dice rolls, level)</li>
             <li>Premium subscription status</li>
+            <li>Push notification device tokens (used to deliver partner activity notifications)</li>
         </ul>
 
         <h3>Local Device Data</h3>
-        <p>The App stores preferences locally on your device (via SharedPreferences), including onboarding status, notification settings, theme preferences, and cached partner data. This data does not leave your device.</p>
+        <p>The App stores preferences locally on your device (via SharedPreferences), including onboarding status, notification settings, theme preferences, privacy consent status, analytics preference, and cached partner data. This data does not leave your device.</p>
 
         <h3>Device Information</h3>
         <p>We collect limited device information for app functionality:</p>
@@ -149,8 +150,12 @@
             <li><strong>Operating system</strong>: To provide platform-specific features</li>
         </ul>
 
+        <h3>Analytics Data</h3>
+        <p>With your consent, the App collects anonymous usage data through Firebase Analytics, including screens viewed, features used, and game outcomes (e.g., scratch card results, streak milestones). This data is not linked to any personally identifiable information and is used solely to understand how the App is used and to improve the experience.</p>
+        <p>Analytics collection is <strong>disabled by default</strong> and is only enabled after you consent during the onboarding process. You may opt out of analytics at any time from the App's Settings page without affecting app functionality.</p>
+
         <h3>Advertising Data</h3>
-        <p>The App displays ads through Google AdMob. When ads are shown, Google may collect device information, advertising identifiers, and ad interaction data. On iOS, the App requests your consent via App Tracking Transparency (ATT) before collecting data used for ad personalization.</p>
+        <p>The App displays ads through Google AdMob. When ads are shown, Google may collect device information, advertising identifiers, and ad interaction data. On iOS, the App requests your consent via App Tracking Transparency (ATT) before initializing the ad SDK and before any ad-related data collection occurs. If you decline, ads are still displayed but are non-personalized.</p>
 
         <h3>Purchase Data</h3>
         <p>If you make an in-app purchase (premium ad-free upgrade), the transaction is processed entirely by Apple (App Store) or Google (Play Store). We do not collect or store payment information such as credit card numbers or billing addresses.</p>
@@ -162,9 +167,11 @@
             <li>To enable multiplayer partnerships and streak tracking between partners</li>
             <li>To connect you with your partner via invite codes</li>
             <li>To schedule local notifications when new scratch cards are available</li>
+            <li>To deliver push notifications about partner activity</li>
             <li>To display rewarded video advertisements (for free-tier users)</li>
             <li>To process your premium purchase status (ad removal)</li>
             <li>To enable account recovery if you link a Google or Apple account</li>
+            <li>To analyze anonymous usage patterns and improve the App (only with your consent)</li>
         </ul>
 
         <!-- 3 -->
@@ -181,6 +188,16 @@
                 <td><strong>Firebase</strong> (Google)</td>
                 <td>Authentication, database, storage</td>
                 <td>Anonymous UID, game data</td>
+            </tr>
+            <tr>
+                <td><strong>Firebase Analytics</strong> (Google)</td>
+                <td>Anonymous usage analytics</td>
+                <td>App events, device information (anonymized)</td>
+            </tr>
+            <tr>
+                <td><strong>Firebase Cloud Messaging</strong> (Google)</td>
+                <td>Push notifications</td>
+                <td>Device push tokens</td>
             </tr>
             <tr>
                 <td><strong>Google AdMob</strong></td>
@@ -212,7 +229,7 @@
         <p>Links to their privacy policies:</p>
         <ul>
             <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy Policy</a></li>
-            <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a> (AdMob, Sign-In)</li>
+            <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a> (AdMob, Analytics, Sign-In)</li>
             <li><a href="https://support.giphy.com/hc/en-us/articles/360032872931-GIPHY-Privacy-Policy" target="_blank" rel="noopener">GIPHY Privacy Policy</a></li>
             <li><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy Policy</a></li>
         </ul>
@@ -221,22 +238,37 @@
         <h2>4. Advertising &amp; Tracking</h2>
         <p>The App shows rewarded video ads through Google AdMob. You can watch ads to unlock gameplay features such as additional scratch cards and dice rolls.</p>
         <ul>
-            <li>On <strong>iOS</strong>, we request your permission via the App Tracking Transparency (ATT) framework before any tracking for ad personalization. You can change this at any time in your device Settings.</li>
+            <li>On <strong>iOS</strong>, the App requests your permission via the App Tracking Transparency (ATT) framework <strong>before initializing the ad SDK</strong> and before any tracking for ad personalization occurs. If you decline, ads are still displayed but are non-personalized. You can change your ATT preference at any time in your device's Settings under Privacy &amp; Security &gt; Tracking.</li>
             <li>On <strong>iOS</strong>, Apple's SKAdNetwork is used for ad attribution without identifying you personally.</li>
             <li>On <strong>Android</strong>, Google's advertising identifier may be used for ad personalization.</li>
         </ul>
         <p>You can remove all ads by purchasing the premium upgrade within the App. For more details, see <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">How Google Uses Information</a>.</p>
 
         <!-- 5 -->
-        <h2>5. In-App Purchases</h2>
-        <p>The App offers a premium upgrade to remove advertisements. All payment processing is handled entirely by the Apple App Store or Google Play Store. We do not receive, store, or have access to your payment details.</p>
+        <h2>5. Analytics &amp; Your Privacy Choices</h2>
+        <p>The App uses Firebase Analytics to collect anonymous usage data that helps us understand how the App is used and identify areas for improvement.</p>
+        <ul>
+            <li><strong>Disabled by default</strong>: Analytics collection is turned off when you first install the App. It is only enabled after you proceed past the onboarding welcome screen, which displays links to this Privacy Policy and our Terms of Service.</li>
+            <li><strong>Opt out at any time</strong>: You can disable analytics collection from <strong>Settings &gt; Analytics</strong> within the App. When disabled, no usage events are sent to Firebase Analytics.</li>
+            <li><strong>No impact on functionality</strong>: Disabling analytics does not affect any features of the App. You can continue to use all features normally.</li>
+            <li><strong>Persistent preference</strong>: Your analytics preference is stored locally on your device and is remembered across app sessions.</li>
+        </ul>
 
         <!-- 6 -->
-        <h2>6. Notifications</h2>
-        <p>The App uses <strong>local notifications only</strong> to remind you when your daily scratch card is available, when you have unused dice rolls, or as evening reminders. These notifications are scheduled on your device and are not sent from external servers. You can disable notifications at any time through your device's system settings.</p>
+        <h2>6. In-App Purchases</h2>
+        <p>The App offers a premium upgrade to remove advertisements. All payment processing is handled entirely by the Apple App Store or Google Play Store. We do not receive, store, or have access to your payment details.</p>
 
         <!-- 7 -->
-        <h2>7. Data Storage &amp; Security</h2>
+        <h2>7. Notifications</h2>
+        <p>The App uses both local notifications and push notifications:</p>
+        <ul>
+            <li><strong>Local notifications</strong>: Scheduled on your device to remind you when your daily scratch card is available, when you have unused dice rolls, or as evening reminders. These are processed entirely on your device and are not sent from external servers.</li>
+            <li><strong>Push notifications</strong>: Delivered via Firebase Cloud Messaging (FCM) to notify you of partner activity. Push notification tokens are stored in our database linked to your anonymous UID and are deleted when you delete your account.</li>
+        </ul>
+        <p>You can disable all notifications at any time through your device's system settings. You may also manage notification permissions within the App's Settings page.</p>
+
+        <!-- 8 -->
+        <h2>8. Data Storage &amp; Security</h2>
         <p>Game data is stored in Google Cloud Firestore, which provides:</p>
         <ul>
             <li>Encryption in transit (TLS/SSL) and at rest</li>
@@ -245,21 +277,21 @@
         </ul>
         <p>Local data stored on your device (SharedPreferences) is not encrypted by default and could be accessible if your device is compromised. We recommend keeping your device secured with a passcode or biometric lock.</p>
 
-        <!-- 8 -->
-        <h2>8. Data Sharing</h2>
+        <!-- 9 -->
+        <h2>9. Data Sharing</h2>
         <p>We do not sell, trade, or share your personal data with third parties for marketing purposes. Data may be shared in the following limited circumstances:</p>
         <ul>
             <li><strong>With your partner</strong>: Prize configurations, scratch activity, streak data, and board game state are shared with the partner you connect with through the App.</li>
-            <li><strong>With service providers</strong>: Firebase (database hosting), Google AdMob (ad serving), and Klipy/GIPHY (sticker search) as described in Section 3.</li>
+            <li><strong>With service providers</strong>: Firebase (database hosting and analytics), Google AdMob (ad serving), Firebase Cloud Messaging (push notifications), and Klipy/GIPHY (sticker search) as described in Section 3.</li>
             <li><strong>Legal requirements</strong>: If required by law, regulation, or legal process.</li>
         </ul>
 
-        <!-- 9 -->
-        <h2>9. International Data Transfers</h2>
+        <!-- 10 -->
+        <h2>10. International Data Transfers</h2>
         <p>Your data is processed and stored via Google Firebase, which may use servers located in the United States and the European Union. By using the App, you consent to the transfer of your data to these locations. Google provides adequate safeguards for data transfers in compliance with applicable data protection laws, including Standard Contractual Clauses for transfers outside the EU/EEA.</p>
 
-        <!-- 10 -->
-        <h2>10. Data Retention &amp; Deletion</h2>
+        <!-- 11 -->
+        <h2>11. Data Retention &amp; Deletion</h2>
         <p>Game data is retained as long as your account exists. You can delete all your data at any time through the App's Settings page. When you request deletion:</p>
         <ul>
             <li>Your partnership document and all associated data are permanently removed</li>
@@ -267,13 +299,14 @@
             <li>Your custom sticker configurations are deleted</li>
             <li>Your shared board game data is removed</li>
             <li>Your partner's connection to your account is severed</li>
+            <li>Your push notification tokens are deleted</li>
             <li>Your Firebase authentication account is deleted</li>
             <li>All local data on your device is cleared</li>
         </ul>
         <p>This deletion is immediate and irreversible. You may also contact us at <a href="mailto:puuoosoftware@gmail.com">puuoosoftware@gmail.com</a> to request data deletion.</p>
 
-        <!-- 11 -->
-        <h2>11. Your Rights Under GDPR</h2>
+        <!-- 12 -->
+        <h2>12. Your Rights Under GDPR</h2>
         <p>If you are located in the European Economic Area (EEA), you have the following rights under the General Data Protection Regulation (GDPR):</p>
         <ul>
             <li><strong>Right of Access</strong>: Request a copy of the data we hold about you.</li>
@@ -282,21 +315,21 @@
             <li><strong>Right to Data Portability</strong>: Request your data in a structured, machine-readable format.</li>
             <li><strong>Right to Restrict Processing</strong>: Request limitation of how we process your data.</li>
             <li><strong>Right to Object</strong>: Object to processing of your data for certain purposes.</li>
-            <li><strong>Right to Withdraw Consent</strong>: Withdraw consent at any time where processing is based on consent.</li>
+            <li><strong>Right to Withdraw Consent</strong>: Withdraw consent at any time where processing is based on consent, including analytics collection via the App's Settings page.</li>
         </ul>
         <p>To exercise any of these rights, please contact us at <a href="mailto:puuoosoftware@gmail.com">puuoosoftware@gmail.com</a>. We will respond within 30 days.</p>
         <p>You also have the right to lodge a complaint with your local data protection authority. In Portugal, this is the <a href="https://www.cnpd.pt" target="_blank" rel="noopener">Comissão Nacional de Proteção de Dados (CNPD)</a>.</p>
 
-        <!-- 12 -->
-        <h2>12. Children's Privacy</h2>
+        <!-- 13 -->
+        <h2>13. Children's Privacy</h2>
         <p>The App is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. Since the App uses anonymous authentication, no personally identifiable information is collected from any user by default. If you believe a child under 13 has used the App, please contact us at <a href="mailto:puuoosoftware@gmail.com">puuoosoftware@gmail.com</a>.</p>
 
-        <!-- 13 -->
-        <h2>13. Changes to This Policy</h2>
+        <!-- 14 -->
+        <h2>14. Changes to This Policy</h2>
         <p>We may update this Privacy Policy from time to time. When we do, we will revise the "Effective Date" at the top of this page. We encourage you to review this page periodically. Your continued use of the App after any changes constitutes your acceptance of the updated policy.</p>
 
-        <!-- 14 -->
-        <h2>14. Contact Us</h2>
+        <!-- 15 -->
+        <h2>15. Contact Us</h2>
         <p>If you have questions or concerns about this Privacy Policy or your data, please contact us at:</p>
         <p><strong>Email:</strong> <a href="mailto:puuoosoftware@gmail.com">puuoosoftware@gmail.com</a></p>
         <p><strong>Entity:</strong> Puuoo Apps, Portugal</p>
